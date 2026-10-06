@@ -93,6 +93,84 @@ text-info me-1"></i> js/views/</span>
     <!-- Bootstrap Bundle JS + Entrada Modular ES6 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/main.js"></script>
+
+    <div class="modal fade" id="modalCadastro" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title font-outfit fw-bold text-dark" id="modalCadastroLabel">
+                        <i class="bi bi-shop text-success me-2"></i>Cadastrar Serviço na Vitrine
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <form id="formCadastro" novalidate>
+                    <input type="hidden" id="servicoId" value="">
+                    <div class="modal-body pt-3">
+                        <p class="text-muted small mb-3">Preencha as informações do empreendedor local:</p>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label small fw-bold text-muted">Nome do Empreendimento *</
+                                    label>
+                                <input type="text" id="nome" class="form-control rounded-3" placeholder="Ex: Maré Alta
+Artesanatos" required>
+                                <div class="invalid-feedback">Por favor, informe o nome do empreendimento.</div>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label for="categoria" class="form-label small fw-bold text-muted">Categoria *</label>
+                                <select id="categoria" class="form-select rounded-3" required>
+                                    <option value="" selected disabled>Selecione...</option>
+                                    <option value="Alimentação">Alimentação &amp; Gastronomia</option>
+                                    <option value="Tecnologia">Tecnologia &amp; Internet</option>
+                                    <option value="Artesanato">Artesanato &amp; Arte Local</option>
+                                    <option value="Serviços Gerais">Serviços Gerais &amp; Reformas</option>
+                                    <option value="Turismo">Turismo &amp; Passeios</option>
+                                </select>
+                                <div class="invalid-feedback">Selecione uma categoria.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bairro" class="form-label small fw-bold text-muted">Bairro / Localidade *</
+                                        label>
+                                    <input type="text" id="bairro" class="form-control rounded-3" placeholder="Ex: Ferrugem,
+Centro..." required>
+                                    <div class="invalid-feedback">Informe o bairro em Garopaba.</div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label for="precoBase" class="form-label small fw-bold text-muted">Preço Base (R$) *</
+                                        label>
+                                    <input type="number" id="precoBase" class="form-control rounded-3" step="0.5"
+                                        min="0" placeholder="Ex: 50.00" required>
+                                    <div class="invalid-feedback">Informe um valor válido em R$.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefone" class="form-label small fw-bold text-muted">WhatsApp / Telefone *
+                                    </ label>
+                                    <input type="tel" id="telefone" class="form-control rounded-3"
+                                        placeholder="48999998888" pattern="[0-9]{10,11}" required>
+                                    <div class="invalid-feedback">Informe com DDD (10 ou 11 dígitos).</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label small fw-bold text-muted">Descrição dos Serviços e
+                                Produtos *</label>
+                            <textarea id="descricao" class="form-control rounded-3" rows="3" placeholder="Descreva os
+produtos e diferenciais..." required></textarea>
+                            <div class="invalid-feedback">Insira uma breve descrição sobre o negócio.</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 pt-0">
+                        <button type="button" class="btn btn-light rounded-pill px-4 text-muted fw-bold"
+                            data-bsdismiss="modal">Cancelar</button>
+                        <button type="submit" id="btnSalvarModal" class="btn btn-success rounded-pill px-4 font
+                        outfit fw-bold shadow-sm">
+                            <i class="bi bi-check2-circle me-1"></i> <span id="btnSalvarTexto">Salvar na Vitrine</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
